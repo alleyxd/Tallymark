@@ -1,0 +1,1014 @@
+{
+ "summary": {
+  "label": "qwen3-vl-8b",
+  "decoding": "constrained",
+  "n": 100,
+  "valid_json": 0.99,
+  "total_accuracy": 0.926,
+  "item_name_f1": 0.904,
+  "item_count_accuracy": 0.83,
+  "median_seconds": 1.165
+ },
+ "rows": [
+  {
+   "i": 0,
+   "valid": true,
+   "seconds": 1.32,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "60.000",
+   "gold_total": "60.000"
+  },
+  {
+   "i": 1,
+   "valid": true,
+   "seconds": 1.3,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "91000",
+   "gold_total": "91000"
+  },
+  {
+   "i": 2,
+   "valid": true,
+   "seconds": 1.13,
+   "total_ok": true,
+   "items_f1": 0.6666666666666666,
+   "count_ok": false,
+   "pred_total": "28,000",
+   "gold_total": "28,000"
+  },
+  {
+   "i": 3,
+   "valid": true,
+   "seconds": 0.89,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "11,000",
+   "gold_total": "11,000"
+  },
+  {
+   "i": 4,
+   "valid": true,
+   "seconds": 1.64,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "174,600",
+   "gold_total": "174,600"
+  },
+  {
+   "i": 5,
+   "valid": true,
+   "seconds": 1.17,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "31.000",
+   "gold_total": "31.000"
+  },
+  {
+   "i": 6,
+   "valid": true,
+   "seconds": 1.51,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "46,000",
+   "gold_total": "46,000"
+  },
+  {
+   "i": 7,
+   "valid": true,
+   "seconds": 1.17,
+   "total_ok": true,
+   "items_f1": 0.6666666666666666,
+   "count_ok": false,
+   "pred_total": "111,000",
+   "gold_total": "111,000"
+  },
+  {
+   "i": 8,
+   "valid": true,
+   "seconds": 1.43,
+   "total_ok": true,
+   "items_f1": 0.5,
+   "count_ok": false,
+   "pred_total": "50,000",
+   "gold_total": "50,000"
+  },
+  {
+   "i": 9,
+   "valid": true,
+   "seconds": 0.8,
+   "total_ok": false,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "36000",
+   "gold_total": null
+  },
+  {
+   "i": 10,
+   "valid": true,
+   "seconds": 0.83,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "17,000",
+   "gold_total": "17,000"
+  },
+  {
+   "i": 11,
+   "valid": true,
+   "seconds": 0.74,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "230,000",
+   "gold_total": "230,000"
+  },
+  {
+   "i": 12,
+   "valid": true,
+   "seconds": 0.99,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "120,000",
+   "gold_total": "120,000"
+  },
+  {
+   "i": 13,
+   "valid": true,
+   "seconds": 1.12,
+   "total_ok": false,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "46,636",
+   "gold_total": "51.300"
+  },
+  {
+   "i": 14,
+   "valid": true,
+   "seconds": 2.77,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "281,435",
+   "gold_total": "281,435"
+  },
+  {
+   "i": 15,
+   "valid": true,
+   "seconds": 1.08,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "63.000",
+   "gold_total": "63.000"
+  },
+  {
+   "i": 16,
+   "valid": true,
+   "seconds": 1.97,
+   "total_ok": true,
+   "items_f1": 0.5714285714285715,
+   "count_ok": false,
+   "pred_total": "70,000",
+   "gold_total": "70,000"
+  },
+  {
+   "i": 17,
+   "valid": true,
+   "seconds": 2.82,
+   "total_ok": true,
+   "items_f1": 0.7692307692307692,
+   "count_ok": false,
+   "pred_total": "Rp. 91,000",
+   "gold_total": "Rp. 91,000"
+  },
+  {
+   "i": 18,
+   "valid": true,
+   "seconds": 0.74,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "156000",
+   "gold_total": "156000"
+  },
+  {
+   "i": 19,
+   "valid": true,
+   "seconds": 1.09,
+   "total_ok": false,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "160000",
+   "gold_total": "176000"
+  },
+  {
+   "i": 20,
+   "valid": true,
+   "seconds": 2.04,
+   "total_ok": false,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "377,059",
+   "gold_total": "377,859"
+  },
+  {
+   "i": 21,
+   "valid": true,
+   "seconds": 1.15,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "Rp38.000",
+   "gold_total": "Rp 38.000"
+  },
+  {
+   "i": 22,
+   "valid": true,
+   "seconds": 1.08,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "40,000",
+   "gold_total": "40,000"
+  },
+  {
+   "i": 23,
+   "valid": true,
+   "seconds": 0.95,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "63,000",
+   "gold_total": "63,000"
+  },
+  {
+   "i": 24,
+   "valid": true,
+   "seconds": 1.32,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "Rp.118.000",
+   "gold_total": "Rp.118.000"
+  },
+  {
+   "i": 25,
+   "valid": true,
+   "seconds": 1.53,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "43,000",
+   "gold_total": "43,000"
+  },
+  {
+   "i": 26,
+   "valid": true,
+   "seconds": 1.51,
+   "total_ok": true,
+   "items_f1": 0.0,
+   "count_ok": true,
+   "pred_total": "Rp 138.000",
+   "gold_total": "Rp 138.000"
+  },
+  {
+   "i": 27,
+   "valid": true,
+   "seconds": 1.19,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "61,600",
+   "gold_total": "61,600"
+  },
+  {
+   "i": 28,
+   "valid": true,
+   "seconds": 1.88,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "426,195",
+   "gold_total": "426,195"
+  },
+  {
+   "i": 29,
+   "valid": true,
+   "seconds": 3.52,
+   "total_ok": true,
+   "items_f1": 0.8571428571428571,
+   "count_ok": false,
+   "pred_total": "145,900",
+   "gold_total": "145,900"
+  },
+  {
+   "i": 30,
+   "valid": true,
+   "seconds": 0.91,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "31,500",
+   "gold_total": "31,500"
+  },
+  {
+   "i": 31,
+   "valid": true,
+   "seconds": 1.33,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "113,886",
+   "gold_total": "113,886"
+  },
+  {
+   "i": 32,
+   "valid": true,
+   "seconds": 0.99,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "24.000",
+   "gold_total": "24.000"
+  },
+  {
+   "i": 33,
+   "valid": true,
+   "seconds": 1.41,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "148,127",
+   "gold_total": "148,127"
+  },
+  {
+   "i": 34,
+   "valid": true,
+   "seconds": 1.23,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "93.500",
+   "gold_total": "93.500"
+  },
+  {
+   "i": 35,
+   "valid": true,
+   "seconds": 1.59,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "54,000",
+   "gold_total": "54,000"
+  },
+  {
+   "i": 36,
+   "valid": true,
+   "seconds": 1.15,
+   "total_ok": true,
+   "items_f1": 0.6666666666666666,
+   "count_ok": false,
+   "pred_total": "40,000",
+   "gold_total": "40,000"
+  },
+  {
+   "i": 37,
+   "valid": true,
+   "seconds": 0.66,
+   "total_ok": false,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "20.000",
+   "gold_total": null
+  },
+  {
+   "i": 38,
+   "valid": true,
+   "seconds": 3.95,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "664,329",
+   "gold_total": "664,329"
+  },
+  {
+   "i": 39,
+   "valid": true,
+   "seconds": 1.97,
+   "total_ok": false,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "3,112,800",
+   "gold_total": null
+  },
+  {
+   "i": 40,
+   "valid": true,
+   "seconds": 1.25,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "68,000",
+   "gold_total": "68,000"
+  },
+  {
+   "i": 41,
+   "valid": true,
+   "seconds": 3.65,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "365000.00",
+   "gold_total": "365000.00"
+  },
+  {
+   "i": 42,
+   "valid": true,
+   "seconds": 1.14,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "16,500",
+   "gold_total": "16,500"
+  },
+  {
+   "i": 43,
+   "valid": true,
+   "seconds": 1.1,
+   "total_ok": true,
+   "items_f1": 0.0,
+   "count_ok": true,
+   "pred_total": "Rp165000.00",
+   "gold_total": "Rp 165000.00"
+  },
+  {
+   "i": 44,
+   "valid": true,
+   "seconds": 0.72,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "30.000",
+   "gold_total": "30.000"
+  },
+  {
+   "i": 45,
+   "valid": true,
+   "seconds": 1.79,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "88.000",
+   "gold_total": "88,000"
+  },
+  {
+   "i": 46,
+   "valid": true,
+   "seconds": 0.99,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "40,000",
+   "gold_total": "40,000"
+  },
+  {
+   "i": 47,
+   "valid": true,
+   "seconds": 1.61,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "63,000.00",
+   "gold_total": "63,000.00"
+  },
+  {
+   "i": 48,
+   "valid": true,
+   "seconds": 0.98,
+   "total_ok": true,
+   "items_f1": 0.0,
+   "count_ok": true,
+   "pred_total": "25,000",
+   "gold_total": "25,000"
+  },
+  {
+   "i": 49,
+   "valid": true,
+   "seconds": 0.99,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "23,000",
+   "gold_total": "23,000"
+  },
+  {
+   "i": 50,
+   "valid": true,
+   "seconds": 1.0,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "19,500",
+   "gold_total": "19,500"
+  },
+  {
+   "i": 51,
+   "valid": true,
+   "seconds": 2.29,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "334,000",
+   "gold_total": "334,000"
+  },
+  {
+   "i": 52,
+   "valid": true,
+   "seconds": 1.25,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "40.000",
+   "gold_total": "40.000"
+  },
+  {
+   "i": 53,
+   "valid": true,
+   "seconds": 1.64,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "123.585",
+   "gold_total": "123.585"
+  },
+  {
+   "i": 54,
+   "valid": true,
+   "seconds": 0.8,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "10,000",
+   "gold_total": "10,000"
+  },
+  {
+   "i": 55,
+   "valid": true,
+   "seconds": 1.15,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "54,000",
+   "gold_total": "54,000"
+  },
+  {
+   "i": 56,
+   "valid": true,
+   "seconds": 0.96,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "8,999",
+   "gold_total": "8,999"
+  },
+  {
+   "i": 57,
+   "valid": true,
+   "seconds": 0.82,
+   "total_ok": false,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "42,000",
+   "gold_total": null
+  },
+  {
+   "i": 58,
+   "valid": true,
+   "seconds": 1.11,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "60,500",
+   "gold_total": "60,500"
+  },
+  {
+   "i": 59,
+   "valid": true,
+   "seconds": 3.88,
+   "total_ok": false,
+   "items_f1": 0.8888888888888888,
+   "count_ok": true,
+   "pred_total": null,
+   "gold_total": "680,500"
+  },
+  {
+   "i": 60,
+   "valid": true,
+   "seconds": 1.39,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "26.250",
+   "gold_total": "26.250"
+  },
+  {
+   "i": 61,
+   "valid": true,
+   "seconds": 2.42,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "24,500",
+   "gold_total": "24,500"
+  },
+  {
+   "i": 62,
+   "valid": true,
+   "seconds": 1.08,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "48.000",
+   "gold_total": "48.000"
+  },
+  {
+   "i": 63,
+   "valid": true,
+   "seconds": 2.04,
+   "total_ok": true,
+   "items_f1": 0.5714285714285715,
+   "count_ok": false,
+   "pred_total": "57.000",
+   "gold_total": "57.000"
+  },
+  {
+   "i": 64,
+   "valid": false,
+   "seconds": 21.9,
+   "total_ok": false,
+   "items_f1": 0.0,
+   "count_ok": false,
+   "pred_total": null,
+   "gold_total": "16.000"
+  },
+  {
+   "i": 65,
+   "valid": true,
+   "seconds": 0.96,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "13.000",
+   "gold_total": "13.000"
+  },
+  {
+   "i": 66,
+   "valid": true,
+   "seconds": 1.16,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "40,000",
+   "gold_total": "40,000"
+  },
+  {
+   "i": 67,
+   "valid": true,
+   "seconds": 0.71,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "9.500,00",
+   "gold_total": "9.500,00"
+  },
+  {
+   "i": 68,
+   "valid": true,
+   "seconds": 0.57,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "20,000",
+   "gold_total": "20,000"
+  },
+  {
+   "i": 69,
+   "valid": true,
+   "seconds": 1.8,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "74,000",
+   "gold_total": "74,000"
+  },
+  {
+   "i": 70,
+   "valid": true,
+   "seconds": 3.89,
+   "total_ok": true,
+   "items_f1": 0.7777777777777777,
+   "count_ok": false,
+   "pred_total": "1,565,938",
+   "gold_total": "1,565,938"
+  },
+  {
+   "i": 71,
+   "valid": true,
+   "seconds": 0.74,
+   "total_ok": false,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": null,
+   "gold_total": "198000"
+  },
+  {
+   "i": 72,
+   "valid": true,
+   "seconds": 0.98,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "17,500",
+   "gold_total": "17,500"
+  },
+  {
+   "i": 73,
+   "valid": true,
+   "seconds": 1.12,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "22.000",
+   "gold_total": "22.000"
+  },
+  {
+   "i": 74,
+   "valid": true,
+   "seconds": 2.44,
+   "total_ok": true,
+   "items_f1": 0.8,
+   "count_ok": false,
+   "pred_total": "330,264",
+   "gold_total": "330,264"
+  },
+  {
+   "i": 75,
+   "valid": true,
+   "seconds": 2.41,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "282,000",
+   "gold_total": "282,000"
+  },
+  {
+   "i": 76,
+   "valid": true,
+   "seconds": 1.74,
+   "total_ok": false,
+   "items_f1": 0.888888888888889,
+   "count_ok": false,
+   "pred_total": "*110000",
+   "gold_total": null
+  },
+  {
+   "i": 77,
+   "valid": true,
+   "seconds": 1.01,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "17,000",
+   "gold_total": "17,000"
+  },
+  {
+   "i": 78,
+   "valid": true,
+   "seconds": 1.19,
+   "total_ok": true,
+   "items_f1": 0.6666666666666666,
+   "count_ok": false,
+   "pred_total": "30.000",
+   "gold_total": "30.000"
+  },
+  {
+   "i": 79,
+   "valid": true,
+   "seconds": 1.04,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "22.000",
+   "gold_total": "22.000"
+  },
+  {
+   "i": 80,
+   "valid": true,
+   "seconds": 1.02,
+   "total_ok": true,
+   "items_f1": 0.5,
+   "count_ok": false,
+   "pred_total": "25.000",
+   "gold_total": "25.000"
+  },
+  {
+   "i": 81,
+   "valid": true,
+   "seconds": 1.44,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "50.000",
+   "gold_total": "50.000"
+  },
+  {
+   "i": 82,
+   "valid": true,
+   "seconds": 1.61,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "385,000",
+   "gold_total": "385,000"
+  },
+  {
+   "i": 83,
+   "valid": true,
+   "seconds": 0.93,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "23.000",
+   "gold_total": "23,000"
+  },
+  {
+   "i": 84,
+   "valid": true,
+   "seconds": 1.32,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "Rp 39.600",
+   "gold_total": "Rp 39.600"
+  },
+  {
+   "i": 85,
+   "valid": true,
+   "seconds": 4.69,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "197.450",
+   "gold_total": "197.450"
+  },
+  {
+   "i": 86,
+   "valid": true,
+   "seconds": 1.12,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "22,000",
+   "gold_total": "22,000"
+  },
+  {
+   "i": 87,
+   "valid": true,
+   "seconds": 0.94,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "40,150",
+   "gold_total": "40,150"
+  },
+  {
+   "i": 88,
+   "valid": true,
+   "seconds": 1.26,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "47,000",
+   "gold_total": "47,000"
+  },
+  {
+   "i": 89,
+   "valid": true,
+   "seconds": 1.06,
+   "total_ok": true,
+   "items_f1": 0.6666666666666666,
+   "count_ok": false,
+   "pred_total": "40,000",
+   "gold_total": "40,000"
+  },
+  {
+   "i": 90,
+   "valid": true,
+   "seconds": 1.03,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "29,500",
+   "gold_total": "29,500"
+  },
+  {
+   "i": 91,
+   "valid": true,
+   "seconds": 0.81,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "21.000",
+   "gold_total": "21.000"
+  },
+  {
+   "i": 92,
+   "valid": true,
+   "seconds": 0.67,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "240.000",
+   "gold_total": "240.000"
+  },
+  {
+   "i": 93,
+   "valid": true,
+   "seconds": 0.78,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "17,999",
+   "gold_total": "17,999"
+  },
+  {
+   "i": 94,
+   "valid": true,
+   "seconds": 2.04,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "140,063",
+   "gold_total": "140,063"
+  },
+  {
+   "i": 95,
+   "valid": true,
+   "seconds": 1.12,
+   "total_ok": false,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "56,181",
+   "gold_total": "61,799"
+  },
+  {
+   "i": 96,
+   "valid": true,
+   "seconds": 1.01,
+   "total_ok": true,
+   "items_f1": 0.6666666666666666,
+   "count_ok": false,
+   "pred_total": "41,000",
+   "gold_total": "41,000"
+  },
+  {
+   "i": 97,
+   "valid": true,
+   "seconds": 1.44,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "55.000",
+   "gold_total": "55.000"
+  },
+  {
+   "i": 98,
+   "valid": true,
+   "seconds": 2.2,
+   "total_ok": true,
+   "items_f1": 1.0,
+   "count_ok": true,
+   "pred_total": "250,690",
+   "gold_total": "250,690"
+  },
+  {
+   "i": 99,
+   "valid": true,
+   "seconds": 2.87,
+   "total_ok": true,
+   "items_f1": 0.25,
+   "count_ok": false,
+   "pred_total": "75,000",
+   "gold_total": "75,000"
+  }
+ ]
+}

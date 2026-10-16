@@ -1,0 +1,22 @@
+[project]
+name = "tallymark"
+version = "0.1.0"
+description = "Receipts and invoices to validated JSON with a local vision-language model and schema-constrained decoding."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Ali Ashter" }]
+dependencies = ["openai>=1.40", "pydantic>=2", "pillow", "pypdfium2", "fastapi", "uvicorn", "python-multipart"]
+
+[project.optional-dependencies]
+dev = ["pytest", "datasets"]
+
+[project.scripts]
+tallymark = "tallymark.cli:main"
+
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["tallymark"]
