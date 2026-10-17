@@ -1,5 +1,7 @@
 # Tallymark
 
+[![tests](https://github.com/alleyxd/Tallymark/actions/workflows/tests.yml/badge.svg)](https://github.com/alleyxd/Tallymark/actions/workflows/tests.yml)
+
 Turn a photo or scan of a receipt or invoice into validated JSON with a vision-language model running locally.
 The schema is enforced during decoding, so the output always parses, and the result is checked with Pydantic before
 it is returned.
