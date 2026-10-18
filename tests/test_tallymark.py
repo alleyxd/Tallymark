@@ -85,3 +85,14 @@ def test_extraction_reports_needs_review():
     ex, _ = extractor('{"items": [{"name": "Tea", "price": "2.00"}], "total": "2.00"}')
     r = ex.extract(Image.new("RGB", (10, 10)), "receipt")
     assert r.valid and not r.needs_review
+
+
+def test_cli_prints_review_flags(tmp_path, monkeypatch, capsys):
+    import tallymark.cli as cli
+    ex, _ = extractor('{"items": [{"name": "Tea", "price": "2.00"}], "total": "20.00"}')
+    monkeypatch.setattr(cli, "Extractor", lambda: ex)
+    img = tmp_path / "r.png"
+    Image.new("RGB", (10, 10)).save(img)
+    monkeypatch.setattr("sys.argv", ["tallymark", str(img)])
+    cli.main()
+    assert '"needs_review": true' in capsys.readouterr().out
