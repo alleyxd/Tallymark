@@ -6,6 +6,7 @@ from types import SimpleNamespace
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from tallymark.cli import expand, record, write  # noqa: E402
 from tallymark.extract import Extractor, image_url  # noqa: E402
 from tallymark.checks import check, parse_amount  # noqa: E402
 from tallymark.schemas import Invoice, Receipt  # noqa: E402
@@ -56,6 +57,27 @@ def test_scoring_helpers():
     assert item_f1(["Coffee"], ["Tea", "Cake"]) == 0.0
 
 
+def test_batch_export_to_csv_and_jsonl(tmp_path):
+    (tmp_path / "a.jpg").write_bytes(b"x")
+    (tmp_path / "sub").mkdir()
+    (tmp_path / "sub" / "b.pdf").write_bytes(b"x")
+    (tmp_path / "notes.txt").write_text("skip me")
+    files = list(expand([tmp_path]))
+    assert [f.name for f in files] == ["a.jpg", "b.pdf"]
+
+    ex, _ = extractor('{"merchant": "Cafe", "items": [{"name": "Tea", "price": "2.00"}], "total": "2.00"}')
+    rec = record("a.jpg", "receipt", ex.extract(Image.new("RGB", (10, 10)), "receipt"))
+    bad, _ = extractor('{"items": "nope"}')
+    rec_bad = record("b.pdf", "receipt", bad.extract(Image.new("RGB", (10, 10)), "receipt", constrained=False))
+
+    write([rec, rec_bad], tmp_path / "out.csv")
+    rows = (tmp_path / "out.csv").read_text(encoding="utf-8").splitlines()
+    assert rows[0].startswith("file,kind,valid") and "Cafe" in rows[1] and ",1," in rows[1] and "False" in rows[2]
+    write([rec, rec_bad], tmp_path / "out.jsonl")
+    lines = (tmp_path / "out.jsonl").read_text(encoding="utf-8").splitlines()
+    assert len(lines) == 2 and __import__("json").loads(lines[0])["items"][0]["name"] == "Tea"
+
+
 def test_parse_amount_handles_common_formats():
     assert str(parse_amount("1,234.56")) == "1234.56"
     assert str(parse_amount("1.234,56")) == "1234.56"
@@ -85,6 +107,18 @@ def test_extraction_reports_needs_review():
     ex, _ = extractor('{"items": [{"name": "Tea", "price": "2.00"}], "total": "2.00"}')
     r = ex.extract(Image.new("RGB", (10, 10)), "receipt")
     assert r.valid and not r.needs_review
+
+
+def test_cli_runs_end_to_end(tmp_path, monkeypatch, capsys):
+    import tallymark.cli as cli
+    ex, _ = extractor('{"merchant": "Cafe", "items": [{"name": "Tea", "price": "2.00"}], "total": "20.00"}')
+    monkeypatch.setattr(cli, "Extractor", lambda: ex)
+    img = tmp_path / "r.png"
+    Image.new("RGB", (10, 10)).save(img)
+    monkeypatch.setattr("sys.argv", ["tallymark", str(img), "--out", str(tmp_path / "o.csv")])
+    cli.main()
+    text = (tmp_path / "o.csv").read_text(encoding="utf-8")
+    assert "needs_review" in text.splitlines()[0] and "True" in text.splitlines()[1]
 
 
 def test_cli_prints_review_flags(tmp_path, monkeypatch, capsys):
