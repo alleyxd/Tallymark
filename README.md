@@ -37,6 +37,9 @@ A real run with Qwen3-VL-4B on a receipt from the CORD-v2 test set (`examples/co
    `json_schema` response format, so the server only lets the model produce output that fits the schema.
 3. The reply is validated with Pydantic and returned as typed data; anything that fails validation is reported,
    never silently passed on.
+4. The numbers are checked against each other: line items against the subtotal, subtotal plus tax against the
+   total, and quantity times unit price on invoice lines. A schema guarantees the shape of the output, not that the
+   digits were read correctly, so any disagreement sets `needs_review` and lists the problem in `issues`.
 
 Adding a document type is a Pydantic model: field descriptions are part of the schema the model sees.
 

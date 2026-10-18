@@ -13,7 +13,7 @@ def main():
     ex = Extractor()
     for f in args.files:
         r = ex.extract(f, args.kind, constrained=not args.free)
-        out = r.data.model_dump() if r.valid else {"error": r.error, "raw": r.raw[:500]}
+        out = {**r.data.model_dump(), "needs_review": r.needs_review, "issues": r.issues} if r.valid \n            else {"error": r.error, "raw": r.raw[:500], "needs_review": True}
         print(json.dumps({"file": f, "seconds": round(r.seconds, 2), **out}, indent=1, ensure_ascii=False))
 
 

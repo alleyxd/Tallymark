@@ -69,6 +69,7 @@ def main():
             "items_f1": item_f1([it.name for it in d.items], gold_items) if d else 0.0,
             "count_ok": bool(d) and len(d.items) == len(gold_items),
             "pred_total": d.total if d else None, "gold_total": gold_total,
+            "needs_review": res.needs_review, "issues": res.issues or [],
         })
         print(i, rows[-1]["valid"], rows[-1]["total_ok"], round(rows[-1]["items_f1"], 2), rows[-1]["seconds"], flush=True)
 
@@ -79,6 +80,12 @@ def main():
                "item_name_f1": round(statistics.mean(r["items_f1"] for r in rows), 3),
                "item_count_accuracy": round(statistics.mean(r["count_ok"] for r in rows), 3),
                "median_seconds": statistics.median(r["seconds"] for r in rows)}
+    # how useful is the arithmetic check: how often it flags, and how many flagged / unflagged totals are wrong
+    flagged = [r for r in with_total if r.get("needs_review")]
+    clean = [r for r in with_total if not r.get("needs_review")]
+    summary["flagged_rate"] = round(len(flagged) / max(1, len(with_total)), 3)
+    summary["total_accuracy_flagged"] = round(statistics.mean(r["total_ok"] for r in flagged), 3) if flagged else None
+    summary["total_accuracy_unflagged"] = round(statistics.mean(r["total_ok"] for r in clean), 3) if clean else None
     print(json.dumps(summary, indent=1))
     out = Path(__file__).parent / "results"
     out.mkdir(exist_ok=True)
