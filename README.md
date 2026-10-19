@@ -82,6 +82,7 @@ docker run -d --gpus all -p 8000:8000 --ipc=host -v ~/.cache/huggingface:/root/.
 uv venv && uv pip install -e ".[dev]"
 tallymark path/to/receipt.jpg
 tallymark path/to/invoice.pdf --kind invoice
+tallymark receipts/ --out receipts.csv            # a whole folder, one row per document (or .jsonl for full output)
 uvicorn tallymark.api:app --port 8070     # POST /extract with a file upload
 ```
 
