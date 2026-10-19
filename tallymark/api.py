@@ -21,4 +21,5 @@ async def extract(file: UploadFile = File(...), kind: str = "receipt"):
     r = extractor.extract(img, kind)
     if not r.valid:
         raise HTTPException(422, {"error": r.error})
-    return {"kind": kind, "seconds": round(r.seconds, 2), "data": r.data.model_dump()}
+    return {"kind": kind, "seconds": round(r.seconds, 2), "data": r.data.model_dump(),
+            "needs_review": r.needs_review, "issues": r.issues}

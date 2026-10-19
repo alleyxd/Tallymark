@@ -7,7 +7,8 @@ from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from tallymark.extract import Extractor, image_url  # noqa: E402
-from tallymark.schemas import Receipt  # noqa: E402
+from tallymark.checks import check, parse_amount  # noqa: E402
+from tallymark.schemas import Invoice, Receipt  # noqa: E402
 from evals.cord import digits, item_f1  # noqa: E402
 
 
@@ -53,3 +54,45 @@ def test_scoring_helpers():
     assert digits("Rp 60.000") == "60000"
     assert item_f1(["Ice Tea", "Nasi Goreng"], ["ICE TEA", "NASI GORENG SPC"]) == 1.0
     assert item_f1(["Coffee"], ["Tea", "Cake"]) == 0.0
+
+
+def test_parse_amount_handles_common_formats():
+    assert str(parse_amount("1,234.56")) == "1234.56"
+    assert str(parse_amount("1.234,56")) == "1234.56"
+    assert str(parse_amount("Rp 60.000")) == "60000"
+    assert str(parse_amount("$4.50")) == "4.50"
+    assert str(parse_amount("-12")) == "-12"
+    assert parse_amount("n/a") is None and parse_amount(None) is None
+
+
+def test_checks_flag_numbers_that_disagree():
+    good = Receipt(items=[{"name": "Latte", "price": "4.50"}, {"name": "Bagel", "price": "3.00"}],
+                   subtotal="7.50", tax="0.38", total="7.88")
+    assert check(good) == []
+    misread = good.model_copy(update={"total": "78.80"})
+    assert any("total" in i for i in check(misread))
+    missing_line = Receipt(items=[{"name": "Latte", "price": "4.50"}], subtotal="7.50", total="7.50")
+    assert any("line items" in i for i in check(missing_line))
+    inv = Invoice(lines=[{"description": "Hosting", "quantity": 3, "unit_price": "10.00", "amount": "33.00"}],
+                  subtotal="33.00", total="33.00")
+    assert any("Hosting" in i for i in check(inv))
+
+
+def test_extraction_reports_needs_review():
+    ex, _ = extractor('{"items": [{"name": "Tea", "price": "2.00"}], "total": "20.00"}')
+    r = ex.extract(Image.new("RGB", (10, 10)), "receipt")
+    assert r.valid and r.needs_review and r.issues
+    ex, _ = extractor('{"items": [{"name": "Tea", "price": "2.00"}], "total": "2.00"}')
+    r = ex.extract(Image.new("RGB", (10, 10)), "receipt")
+    assert r.valid and not r.needs_review
+
+
+def test_cli_prints_review_flags(tmp_path, monkeypatch, capsys):
+    import tallymark.cli as cli
+    ex, _ = extractor('{"items": [{"name": "Tea", "price": "2.00"}], "total": "20.00"}')
+    monkeypatch.setattr(cli, "Extractor", lambda: ex)
+    img = tmp_path / "r.png"
+    Image.new("RGB", (10, 10)).save(img)
+    monkeypatch.setattr("sys.argv", ["tallymark", str(img)])
+    cli.main()
+    assert '"needs_review": true' in capsys.readouterr().out

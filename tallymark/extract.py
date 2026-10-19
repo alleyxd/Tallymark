@@ -10,6 +10,7 @@ from pathlib import Path
 from openai import OpenAI
 from pydantic import BaseModel, ValidationError
 
+from .checks import check
 from .schemas import SCHEMAS
 
 INSTRUCTION = ("Extract the {kind} in this image into JSON that matches the schema. Copy names and amounts exactly "
@@ -23,6 +24,12 @@ class Extraction:
     valid: bool
     seconds: float
     error: str | None = None
+    issues: list[str] | None = None
+
+    @property
+    def needs_review(self) -> bool:
+        """True when the output is invalid or its numbers disagree with each other."""
+        return not self.valid or bool(self.issues)
 
 
 def image_url(source) -> str:
@@ -70,6 +77,7 @@ class Extractor:
         secs = time.time() - t
         m = re.search(r"\{.*\}", raw, re.S)
         try:
-            return Extraction(schema.model_validate_json(m.group(0) if m else raw), raw, True, secs)
+            data = schema.model_validate_json(m.group(0) if m else raw)
+            return Extraction(data, raw, True, secs, issues=check(data))
         except (ValidationError, ValueError) as e:
             return Extraction(None, raw, False, secs, str(e)[:300])
