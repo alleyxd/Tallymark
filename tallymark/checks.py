@@ -24,8 +24,9 @@ def parse_amount(text) -> Decimal | None:
     elif "," in s or "." in s:
         sep = "," if "," in s else "."
         head, _, tail = s.rpartition(sep)
-        # one separator followed by exactly two digits is a decimal point; anything else groups thousands
-        if s.count(sep) == 1 and len(tail) == 2:
+        # thousands groups always have three digits, so one separator followed by one or two digits, or by
+        # anything after a leading zero ('0.500'), is a decimal point
+        if s.count(sep) == 1 and (len(tail) in (1, 2) or head in ("", "0")):
             s = head.replace(sep, "") + "." + tail
         else:
             s = s.replace(sep, "")

@@ -87,6 +87,15 @@ def test_parse_amount_handles_common_formats():
     assert parse_amount("n/a") is None and parse_amount(None) is None
 
 
+def test_parse_amount_reads_short_decimals():
+    # thousands groups have three digits, so one or two digits after a single separator are decimals
+    assert str(parse_amount("4.5")) == "4.5"
+    assert str(parse_amount("12,5")) == "12.5"
+    assert str(parse_amount("0.500")) == "0.500"
+    assert str(parse_amount("1.234")) == "1234"
+    assert str(parse_amount("1.234.567")) == "1234567"
+
+
 def test_checks_flag_numbers_that_disagree():
     good = Receipt(items=[{"name": "Latte", "price": "4.50"}, {"name": "Bagel", "price": "3.00"}],
                    subtotal="7.50", tax="0.38", total="7.88")
